@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests --watch",
-    "test:staged": "jest",
+    "test:staged": "jest --passWithNoTests",
     "prepare": "husky install"
   },
   "repository": {
@@ -37,6 +37,10 @@
   },
   "dependencies": {},
   "lint-staged": {
-    "*.js": "eslint --cache --fix"
+    "*.ts": [
+      "eslint 'src/**' --fix",
+      "npm run test:staged",
+      "git add"
+  ]
   }
 }
