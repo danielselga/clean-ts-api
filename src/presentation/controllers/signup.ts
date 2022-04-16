@@ -1,10 +1,8 @@
 import { HttpResponse, HttpRequest } from '../protocols/http'
-import { MissingParamError } from '../errors/MissingParamError'
-import { badRequest } from '../helpers/httpHelper'
+import { MissingParamError, InvalidParamError } from '../errors'
+import { badRequest, serverError } from '../helpers/httpHelper'
 import { Controller } from '../protocols/controller'
 import { EmailValidator } from '../protocols/emailValidator'
-import { InvalidParamError } from '../errors/InvalidParamError'
-import { ServerError } from '../errors/ServerError'
 
 // Implements a class means we can tye the class as the interface.
 // This is a very good practice.
@@ -31,10 +29,7 @@ export class SignUpController implements Controller {
       }
       return badRequest(new Error('Passed'))
     } catch (error) {
-      return {
-        statusCode: 500,
-        body: new ServerError()
-      }
+      return serverError()
     }
   }
 }
