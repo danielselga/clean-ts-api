@@ -41,6 +41,6 @@
       "eslint 'src/**' --fix",
       "npm run test:staged",
       "git add"
-  ]
+    ]
   }
 }
