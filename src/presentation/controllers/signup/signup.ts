@@ -1,7 +1,6 @@
-import { AddAccount } from '../../domain/usecases/addAccount'
-import { MissingParamError, InvalidParamError } from '../errors'
-import { badRequest, serverError } from '../helpers/httpHelper'
-import { Controller, EmailValidator, HttpResponse, HttpRequest } from '../protocols'
+import { MissingParamError, InvalidParamError } from '../../errors'
+import { badRequest, serverError } from '../../helpers/httpHelper'
+import { Controller, EmailValidator, HttpResponse, HttpRequest, AddAccount } from '../signup/signupProtocols'
 
 // Implements a class means we can tye the class as the interface.
 // This is a very good practice.
