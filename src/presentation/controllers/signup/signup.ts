@@ -1,5 +1,5 @@
 import { MissingParamError, InvalidParamError } from '../../errors'
-import { badRequest, serverError } from '../../helpers/httpHelper'
+import { badRequest, serverError, success } from '../../helpers/httpHelper'
 import { Controller, EmailValidator, HttpResponse, HttpRequest, AddAccount } from '../signup/signupProtocols'
 
 // Implements a class means we can tye the class as the interface.
@@ -41,10 +41,7 @@ export class SignUpController implements Controller {
         password
       })
 
-      return {
-        statusCode: 200,
-        body: account
-      }
+      return success(account)
     } catch (error) {
       return serverError()
     }
