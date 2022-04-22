@@ -36,6 +36,6 @@ describe('DbAccount Usecases', () => {
       password: 'valid_password'
     }
     await sut.add(accountData)
-    expect(encryptSpy)
+    expect(encryptSpy).toBeCalledWith('valid_password')
   })
 })
