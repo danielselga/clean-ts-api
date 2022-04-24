@@ -1,6 +1,6 @@
 /** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  preset: ['ts-jest', '@shelf/jest-mongodb'],
+  preset: '@shelf/jest-mongodb',
   testEnvironment: 'node',
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
