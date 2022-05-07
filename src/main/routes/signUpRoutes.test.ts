@@ -12,7 +12,7 @@ describe('signUp routes', () => {
   })
 
   beforeEach(async () => {
-    const accountsCollection = MongoHelper.getColection('accounts')
+    const accountsCollection = MongoHelper.getCollection('accounts')
     await accountsCollection.deleteMany({})
   })
 
